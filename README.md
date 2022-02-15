@@ -25,7 +25,7 @@ This Helm chart relies on the OCI Service Operator for Kubernetes (OSOK), and it
 
 **1. Clone or download the contents of this repo** 
      
-     git clone https://github.com/chiphwang1/helm-oci-autonomous-db.git
+     git clone https://github.com/oracle-devrel/helm-oci-autonomous-db.git
 
 **2. Change to the directory that holds the Helm Chart** 
 
