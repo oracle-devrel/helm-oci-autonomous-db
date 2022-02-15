@@ -1,0 +1,21 @@
+It can take up to 10 minutes for the AutonomousDB. 
+
+
+1. To check the status of the AutonomousDB System run the following command
+
+kubectl -n {{ .Release.Namespace }} get autonomousdatabases -o wide
+
+2. To retreive the OCID of MySQL DB System run the following command
+
+kubectl -n {{ .Release.Namespace }} get autonomousdatabases {{ .Values.name}} -o jsonpath="{.items[0].status.status.ocid}"
+
+4. To retreive the wallet password of the autonomousdatabases  System run the following command
+
+ kubectl -n  {{ .Release.Namespace }}  get secret {{ .Values.walletName}} -o  jsonpath="{.data.walletPassword}" | base64 --decode
+
+5. For more information on deploying autonomousdatabases System with oci-service-operator
+
+https://github.com/oracle/oci-service-operator/blob/main/docs/adb.md
+
+
+
