@@ -1,0 +1,33 @@
+apiVersion: oci.oracle.com/v1beta1
+kind: AutonomousDatabases
+metadata:
+  name: {{ .Values.name }}
+spec:
+  compartmentId: {{ .Values.compartmentId | quote }}
+  displayName: {{ .Values.name }}
+  dbName: {{ .Values.DBName }}
+  dbWorkload: {{ .Values.dbWorkload }}
+  isDedicated: {{ .Values.isDedicated }}
+  dbVersion: {{ .Values.dbVersion }}
+  dataStorageSizeInTBs: {{ .Values.dataStorageSizeInTBs }}
+  cpuCoreCount: {{ .Values.cpuCoreCount}}
+  adminPassword:
+    secret:
+      secretName: {{ .Values.adminPassword.secret.secretName}}
+  isAutoScalingEnabled: {{ .Values.isAutoScalingEnabled }}
+  isFreeTier: {{ .Values.isFreeTier }}
+  licenseModel: {{ .Values.licenseModel }}
+  wallet:
+    walletName: {{ .Values.wallet.walletName }}
+    walletPassword:
+      secret:
+        secretName: {{ .Values.wallet.walletPassword.secret.secretName}}
+  {{- with  .Values.freeformTags }}
+  freeformTags:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with  .Values.definedTags }}
+  definedTags:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+

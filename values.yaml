@@ -1,0 +1,42 @@
+# Default values for helm-oci-autonomous-database.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# name assigned to autonomousdatabases resource (Required)
+name: autodbtest301
+# OCID of compartment to create the autonomousdatabase (Required)
+compartmentId: 
+# Name assigned to the autonomousdatabase in OCI (Required)
+DBName: autodbtest301
+# OLTP or DW (Required)
+dbWorkload: OLTP
+#  True if the database is on dedicated Exadata infrastructure (defaults to false)
+isDedicated: false
+# A valid Oracle Database version for Autonomous Database (Not Required)
+dbVersion: 
+# The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed (Required)
+dataStorageSizeInTBs: 2
+# The number of OCPU cores (Required)
+cpuCoreCount: 2
+# indicates if auto scaling is enabled for the Autonomous Database OCPU core count (Defaukts to false)
+isAutoScalingEnabled: false
+# Indicates if this is an Always Free resource. (Defaults to false)
+isFreeTier: false
+# LICENSE_INCLUDED or BRING_YOUR_OWN_LICENSE ( Defaults to ICENSE_INCLUDED)
+licenseModel: 
+wallet:
+  # walletName (Required)
+  walletName: autodbwallet
+  walletPassword:
+    secret:
+      # secretName (Required)
+      secretName: walletpassword
+adminPassword:
+  secret:
+    # secretName (Required)
+    secretName: dbpassword
+freeformTags:
+definedTags:
+# Can be set during Helm installation (best practice is not to set passwords in this file)
+dbPassword: 
+walletPassword: 
