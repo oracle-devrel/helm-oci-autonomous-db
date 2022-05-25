@@ -2,6 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+
+tag: "ArchitectureCenter\\\\deploy-oci-helm-atp"
+
 # name assigned to autonomousdatabases resource (Required)
 name: autodbtest301
 # OCID of compartment to create the autonomousdatabase (Required)

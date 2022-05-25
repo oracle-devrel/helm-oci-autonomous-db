@@ -24,9 +24,9 @@ spec:
         secretName: {{ .Values.wallet.walletPassword.secret.secretName}}
   {{- with  .Values.freeformTags }}
   freeformTags:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
-  {{- with  .Values.definedTags }}
+    name: "{{ .Values.tag}}-{{randAlphaNum 10 | lower }}" 
+    description: "ArchitectureCenterTagNamespace"
+    compartment_id: {{ .Values.spec.compartmentId }}
   definedTags:
     {{- toYaml . | nindent 4 }}
   {{- end }}
