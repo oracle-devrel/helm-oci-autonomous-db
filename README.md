@@ -260,7 +260,7 @@ The Complete Specification of the `AutonomousDatabase` Custom Resource (CR) is a
 
 
 ## License
-Copyright (c) 2022 Oracle and/or its affiliates.
+Copyright (c) 2024 Oracle and/or its affiliates.
 
 Licensed under the Universal Permissive License (UPL), Version 1.0.
 
